@@ -3,6 +3,7 @@ import AWS from "aws-sdk";
 
 import Header from "./components/Header";
 import Section from "./components/Section";
+import AudioPlayer from "./components/AudioPlayer";
 
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_CLIENTID,
@@ -14,6 +15,7 @@ const polly = new AWS.Polly();
 
 const App = () => {
   const [text, setText] = useState("");
+  const [audioFile, setAudioFile] = useState();
 
   const convertToSpeech = () => {
     polly.synthesizeSpeech(
@@ -27,7 +29,7 @@ const App = () => {
         if (error) {
           console.log(error);
         } else {
-          console.log(data);
+          setAudioFile(data);
         }
       }
     );
@@ -43,6 +45,8 @@ const App = () => {
           convertToSpeech={convertToSpeech}
         />
       </div>
+
+      <AudioPlayer audioFile={audioFile} />
     </>
   );
 };
