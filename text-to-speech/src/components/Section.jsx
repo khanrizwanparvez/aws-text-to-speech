@@ -1,6 +1,6 @@
 import React from "react";
 
-const Section = ({ text, setText }) => {
+const Section = ({ text, setText, convertToSpeech }) => {
   return (
     <div className="section-container">
       <textarea
@@ -9,7 +9,9 @@ const Section = ({ text, setText }) => {
         value={text}
         onChange={(e) => setText(e.target.value)}
       ></textarea>
-      <button className="btn-convert">Convert to Speech</button>
+      <button onClick={convertToSpeech} className="btn-convert">
+        Convert to Speech
+      </button>
     </div>
   );
 };
