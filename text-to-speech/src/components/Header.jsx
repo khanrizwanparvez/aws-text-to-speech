@@ -2,10 +2,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header>
+    <div>
       {/* <img src={logo} alt="logo" /> */}
       <h1 className="logo">Parvez.</h1>
-    </header>
+    </div>
   );
 };
 

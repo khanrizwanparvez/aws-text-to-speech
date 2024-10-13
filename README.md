@@ -1,16 +1,6 @@
-# TEXT-TO-SPEECH using AWS
+# TEXT-TO-SPEECH using AWS POLLY
 
-1. Install aws-sdk to use AWS POLLY
+- Create a React app
 ```
-npm i aws-sdk
+npx create-react-app app-name
 ```
-
-- Login to AWS
-- Create a IAM user and Open it
-- Goto User > Create user
-- In Create user select Attach policies directly in Permissions options
-- Search polly and Select AmazomPllyFullAccess
-- Goto Security Credentials > Create Access Keys > Local code 
-- Goto POLLY and see the Region
-
-* When you declare any Environment variable in react app, start with "REACT_APP_"
